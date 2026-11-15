@@ -1,3 +1,19 @@
+**BATCH B — GATE 2 IA CLOSED · GATE 2.5 DESIGN APPROVED 2026-11-15 (M1–M9 + M4b)** — Payments · Credit · GST (10 P0). Owner R1–R5 answered.
+Sources: `impact/BATCH-B_IMPACT_ANALYSIS_SUMMARY_2026_11_14.md`, `change_requests/BATCH_B_OWNER_DECISIONS_2026_11_14.md`, `backend_briefs/BACKEND_BRIEF_BATCH-B_2026_11_15.md` (Gyan, BB-01..BB-12), mockups `design/BATCH-B_GATE2_5_MOCKUPS_2026_11_15.html` (M1–M9 + M4b, ALL APPROVED 2026-11-15). Next: Gate 3.
+
+| ID | Pri | Status | IA doc | Mockup | Backend asks |
+|---|---|---|---|---|---|
+| **BUG-671** | P0 | GATE_2_IA_CLOSED 2026-11-15 — FE only | `impact/BUG-671_IMPACT_ANALYSIS.md` | M1 | none |
+| **BUG-672** | P0 | GATE_2_IA_CLOSED 2026-11-15 — FE root cause | `impact/BUG-672_IMPACT_ANALYSIS.md` | M2 | BB-01 (soft) |
+| **CR-526** (+BUG-605) | P0 | GATE_2_IA_CLOSED 2026-11-15 — settled-day block waits backend | `impact/CR-526_IMPACT_ANALYSIS.md` | M3, M4 | BB-02, BB-03 |
+| **CR-542** | P0 | GATE_2_IA_CLOSED 2026-11-15 — backend-blocked | `impact/CR-542_IMPACT_ANALYSIS.md` | M3 | BB-04, BB-05 |
+| **CR-514** | P0 | GATE_2_IA_CLOSED 2026-11-15 — backend-blocked (Q18: per method) | `impact/CR-514_IMPACT_ANALYSIS.md` | M5 | BB-06, BB-07 |
+| **CR-522** | P0 | GATE_2_IA_CLOSED 2026-11-15 — backend-blocked (Q17: blank = off) | `impact/CR-522_IMPACT_ANALYSIS.md` | M6 | BB-08 |
+| **CR-527** | P0 | GATE_2_IA_CLOSED 2026-11-15 — backend-blocked (Q15: diner per order) | `impact/CR-527_IMPACT_ANALYSIS.md` | M4 | BB-09 |
+| **CR-536** | P0 | GATE_2_IA_CLOSED 2026-11-15 — backend-blocked | `impact/CR-536_IMPACT_ANALYSIS.md` | M7 | BB-10 |
+| **BUG-607** | P0 | GATE_2_IA_CLOSED 2026-11-15 — fix is backend (Gyan); FE note only | `impact/BUG-607_IMPACT_ANALYSIS.md` | M9 | BB-11, BB-12 |
+| **CR-394** | P0 | GATE_2_IA_CLOSED 2026-11-15 — scope reversed (Q16): Exclusive only, remove Inclusive choice | `impact/CR-394_IMPACT_ANALYSIS.md` | M8 | BB-13 (data fix) |
+
 **BATCH A — GATE 3 PLANNING 2026-11-15 (per-CR plans)** — CR-372-B FROZEN; others NOT FROZEN (backend replies pending). Group plans G1/G2/G6 superseded. Index: `plans/BATCH-A_GATE3_PLANNING_INDEX_2026_11_15.md`
 Sources: `impact/BATCH-A_IMPACT_ANALYSIS_SUMMARY_2026_11_14.md`, `change_requests/BATCH_A_OWNER_DECISIONS_2026_11_14.md`, `backend_briefs/BACKEND_BRIEF_BATCH-A_2026_11_14.md` (Gyan), `backend_briefs/BACKEND_BRIEF_CR-495_ROOM_COMP_MEAL_PACKAGE_2026_11_14.md` (Parth), tracker `backend_briefs/BACKEND_BRIEF_TRACKER.html`.
 

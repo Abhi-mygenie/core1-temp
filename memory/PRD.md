@@ -24,9 +24,11 @@ Point-of-Sale web application (React + FastAPI + MongoDB) for restaurant managem
 
 ### Batch B — Payments, Credit & GST (9 P0 + CR-542 → P0)
 - **Gate 1 Intake:** CLOSED (P0 only)
-- **Gate 2 Impact Analysis:** IN PROGRESS 2026-11-15 (code reality + live probes done, owner R1–R4 answered, R5 Q15–Q18 open)
+- **Gate 2 Impact Analysis:** CLOSED 2026-11-15 (owner R1–R5 answered; R5 read-only probes on RID 541)
+- **Gate 2.5 Design:** APPROVED 2026-11-15 (M1–M9 + M4b) — `design/BATCH-B_GATE2_5_MOCKUPS_2026_11_15.html` (M1–M9; preview `/batchb-gate25-mockup.html`)
+- Backend brief: `backend_briefs/BACKEND_BRIEF_BATCH-B_2026_11_15.md` (BB-01..BB-13 + BB-10b, Gyan) — DRAFT, NOT SENT (owner to decide channel)
 - Summary: `impact/BATCH-B_IMPACT_ANALYSIS_SUMMARY_2026_11_14.md`
-- Handover: `handover/SESSION_HANDOVER_2026_11_15_BATCH_B_GATE2_IA_PARTIAL.md`
+- Handover: `handover/SESSION_HANDOVER_2026_11_15_BATCH_B_GATE2_IA_CLOSED.md`
 
 ### Batch C — Order Beta Report & Reports (4 P0 items + 2 investigations)
 - **Gate 1 Intake:** CLOSED (P0 only)
