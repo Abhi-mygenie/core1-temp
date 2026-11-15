@@ -3,8 +3,8 @@
  "at_utc": "2026-11-15 08:23:05",
  "body": {
   "id": 667,
-  "f_name": "Pranav",
-  "l_name": "Dogra",
+  "f_name": "***",
+  "l_name": "***",
   "phone": "***",
   "email": "***",
   "email_verified_at": null,
@@ -24,7 +24,7 @@
     "id": 644,
     "name": "CAFE 103",
     "phone": "***",
-    "report_number": "9816697781",
+    "report_number": "***",
     "email": "***",
     "logo": null,
     "latitude": "14.998562968578792",
@@ -133,7 +133,7 @@
     "live": 1,
     "dynamic_upi_value": "***",
     "auto_service_charge": "No",
-    "inventory_alert_number": "9816697781",
+    "inventory_alert_number": "***",
     "printing_in_kds": "Yes",
     "voice_in_kds": "Yes",
     "inventory_negative": "Yes",
@@ -300,7 +300,7 @@
      }
     ],
     "gst_status": true,
-    "gst_code": "02AANCB3997K1Z7",
+    "gst_code": "***",
     "settings": {
      "id": 10,
      "restaurant_id": 644,

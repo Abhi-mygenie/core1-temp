@@ -91,3 +91,12 @@ Point-of-Sale web application (React + FastAPI + MongoDB) for restaurant managem
 - BA-23, BA-24 added to Gyan's brief (auto-cancel reason + refund-cancel note key).
 - Owner decisions R13–R15 recorded.
 - Build blocked on QA of BUG-660/661/662/665/666/656, CR-512 (same files).
+
+## 2026-11-15 — Batch D Gate 2 Impact Analysis (CLOSED)
+- Role: PLANNING (Gate 2 IA). Docs only, zero code changes.
+- 6 P0 → GATE_2_IA_CLOSED: BUG-667, BUG-669, BUG-673, CR-525, CR-521, CR-523.
+- Docs: `impact/<ID>_IMPACT_ANALYSIS.md` ×6, `impact/BATCH-D_IMPACT_ANALYSIS_SUMMARY_2026_11_15.md`, `backend_briefs/BACKEND_BRIEF_BATCH-D_2026_11_15.md`, `design/CR-521_ORANGE_SHADE_DECISION_2026_11_15.md`, `mockups/CR-521_CURRENT_VS_PROPOSED_2026_11_15.html`, evidence `evidence/BATCH-D-IA/probes_2026_11_15/` (masked).
+- Owner decisions R1–R6 in `change_requests/BATCH_D_OWNER_DECISIONS_2026_11_14.md`.
+- Open: BUG-669 variation repro (owner); probe customers 51320/51321 on CAFE 103 (team to delete); BD-01 backend reset blocks the CR-525/521 release.
+- Next: owner Gate 3 GO.
+
