@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>BACKEND_BRIEF_CR-495_ROOM_COMP_MEAL_PACKAGE_2026_11_14 — MyGenie POS</title><style>body{font-family:Georgia,serif;margin:0;color:#1d1d1b;background:#faf8f3}.wrap{max-width:1000px;margin:0 auto;padding:28px 32px}a{color:#b4471b}table{border-collapse:collapse;width:100%;font-size:13px;background:#fff;margin:10px 0}th,td{border:1px solid #d6d2c4;padding:6px 8px;text-align:left;vertical-align:top}th{background:#efeadb}code{background:#efeadb;padding:1px 4px;border-radius:3px;font-size:12px}pre{background:#efeadb;padding:10px;overflow:auto}blockquote{border-left:4px solid #d6d2c4;margin:8px 0;padding:4px 12px;color:#555}.top{font-size:13px;margin-bottom:16px}</style></head><body><div class="wrap"><p class="top"><a href="/backend-tracker.html" data-testid="back-to-tracker">&larr; Backend tracker</a> · <a href="/design-tracker.html">Design tracker</a></p><h1>Backend Brief — CR-495 Meal Package at Check-In + Room Comp Limit — 2026-11-14</h1>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>BACKEND_BRIEF_CR-495_ROOM_COMP_MEAL_PACKAGE_2026_11_14 — MyGenie POS</title><style>body{font-family:Georgia,serif;margin:0;color:#1d1d1b;background:#faf8f3}.wrap{max-width:1000px;margin:0 auto;padding:28px 32px}a{color:#b4471b}table{border-collapse:collapse;width:100%;font-size:13px;background:#fff;margin:10px 0}th,td{border:1px solid #d6d2c4;padding:6px 8px;text-align:left;vertical-align:top}th{background:#efeadb}code{background:#efeadb;padding:1px 4px;border-radius:3px;font-size:12px}pre{background:#efeadb;padding:10px;overflow:auto}blockquote{border-left:4px solid #d6d2c4;margin:8px 0;padding:4px 12px;color:#555}:target{background:#ffe2c2;outline:2px solid #b4471b}.top{font-size:13px;margin-bottom:16px}</style></head><body><div class="wrap"><p class="top"><a href="/backend-tracker.html" data-testid="back-to-tracker">&larr; Backend tracker</a> · <a href="/design-tracker.html">Design tracker</a></p><h1>Backend Brief — CR-495 Meal Package at Check-In + Room Comp Limit — 2026-11-14</h1>
 <blockquote>
 <p><strong>SUPERSEDED 2026-11-15 (owner R21)</strong> by the base document <code>backend_briefs/BACKEND_BRIEF_BATCH-A_2026_11_15.html</code> §CR-495. Kept for history; not updated.</p>
 </blockquote>
@@ -28,37 +28,37 @@ Probe evidence (The Palm House, RID 541, read-only): <code>evidence/BATCH-A-IA/p
 </thead>
 <tbody>
 <tr>
-<td>B-495-1</td>
+<td id="B-495-1">B-495-1</td>
 <td>Meal package on check-in</td>
 <td>Field on POS check-in (walk-in) for non-PMS outlets: <code>meal_package</code> = <code>room_only</code> / <code>breakfast</code> / <code>half_board</code> / <code>full_board</code>. Stored on booking/room; returned on room list, room order <code>room_info</code>, folio.</td>
 </tr>
 <tr>
-<td>B-495-2</td>
+<td id="B-495-2">B-495-2</td>
 <td>Guest count</td>
 <td><code>guest_count</code> captured at check-in, editable during stay; returned with B-495-1.</td>
 </tr>
 <tr>
-<td>B-495-3</td>
+<td id="B-495-3">B-495-3</td>
 <td>Limit settings</td>
 <td>Restaurant settings keys: ₹ per guest per meal for each package (breakfast / lunch / dinner). Which meals apply per package: BB = breakfast, HB = breakfast + one main meal, FB = all three.</td>
 </tr>
 <tr>
-<td>B-495-4</td>
+<td id="B-495-4">B-495-4</td>
 <td>Daily used counter</td>
 <td>Server-side comp amount used per room, per meal, per business day. Returned to POS before comp and updated on comp save; shared across devices.</td>
 </tr>
 <tr>
-<td>B-495-5</td>
+<td id="B-495-5">B-495-5</td>
 <td>Meal slot</td>
 <td>How a comp is assigned to breakfast / lunch / dinner (time window per meal in settings, or chosen by cashier). Backend to propose.</td>
 </tr>
 <tr>
-<td>B-495-6</td>
+<td id="B-495-6">B-495-6</td>
 <td>Enforcement</td>
 <td>On comp save for a room order: if over remaining limit, or the meal is outside the package (owner R18), and no valid PIN → reject.</td>
 </tr>
 <tr>
-<td>B-495-7</td>
+<td id="B-495-7">B-495-7</td>
 <td>OTA mapping (PMS outlets)</td>
 <td>Map channel-manager meal plan / rateplan to the 4 packages. Same release as non-PMS.</td>
 </tr>

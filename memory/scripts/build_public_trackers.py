@@ -16,6 +16,7 @@ PAGE_CSS = (
     "th,td{border:1px solid #d6d2c4;padding:6px 8px;text-align:left;vertical-align:top}th{background:#efeadb}"
     "code{background:#efeadb;padding:1px 4px;border-radius:3px;font-size:12px}pre{background:#efeadb;padding:10px;overflow:auto}"
     "blockquote{border-left:4px solid #d6d2c4;margin:8px 0;padding:4px 12px;color:#555}"
+    ":target{background:#ffe2c2;outline:2px solid #b4471b}"
     ".top{font-size:13px;margin-bottom:16px}"
 )
 
@@ -59,13 +60,18 @@ def fix_links(text):
     return re.sub(r'href="([A-Za-z0-9_\-]+)\.md"', r'href="\1.html"', text)
 
 
+def add_anchors(body):
+    body = re.sub(r"<td>((?:BA|BB|BD|B-495)-[0-9]+[a-z]?)(</td>| \()", r'<td id="\1">\1\2', body)
+    return re.sub(r"<h2>ASK (\d)", r'<h2 id="ASK-\1">ASK \1', body)
+
+
 def render_doc(folder, name):
     src = MEM / folder / name
     if name.endswith(".html"):
         out = fix_links(src.read_text(encoding="utf-8"))
     else:
         body = markdown.markdown(src.read_text(encoding="utf-8"), extensions=["tables", "fenced_code"])
-        out = wrap_page(Path(name).stem, fix_links(body))
+        out = wrap_page(Path(name).stem, add_anchors(fix_links(body)))
     (OUT / page_name(name)).write_text(out, encoding="utf-8")
     return f"/briefs/{page_name(name)}"
 
@@ -84,6 +90,42 @@ def batch_links(key):
     return f'<div class="docs" data-testid="tracker-docs-batch-{key.lower()}"><b>Documents</b><ul>{"".join(items)}</ul></div>'
 
 
+BRIEF_PAGE = {
+    "b": "/briefs/BACKEND_BRIEF_BATCH-B_2026_11_15.html",
+    "c": "/briefs/BACKEND_BRIEF_BATCH-C_2026_11_15.html",
+    "d": "/briefs/BACKEND_BRIEF_BATCH-D_2026_11_15.html",
+}
+
+
+def contract_cell(batch, row_id, item):
+    if batch.startswith("a"):
+        ids = ["CR-495"] if batch == "a-cr495" else re.findall(r"(?:CR|BUG)-\d+", item)
+        links = [
+            f'<a href="/briefs/BATCH-A_{i}_API_CONTRACT_2026_11_15.html" target="_blank">{i} contract</a>'
+            for i in ids
+            if (MEM / "contracts" / f"BATCH-A_{i}_API_CONTRACT_2026_11_15.md").exists()
+        ]
+        return "<br>".join(links) or '<span class="nc">No contract (P1 / phase 2)</span>'
+    anchor = row_id.replace(" ", "-")
+    return f'<a href="{BRIEF_PAGE[batch]}#{anchor}" target="_blank">Brief §{row_id}</a><br><span class="nc">no contract yet</span>'
+
+
+def add_contract_column(src):
+    def table(m):
+        batch, body = m.group(1), m.group(2)
+        body = body.replace("<th>Status</th>", "<th>Contract</th><th>Status</th>", 1)
+
+        def row(r):
+            cells = re.findall(r"<td>(.*?)</td>", r.group(0))
+            item = cells[1] if len(cells) > 1 else ""
+            cell = f'<td data-testid="contract-{batch}-{cells[0].replace(" ", "-").lower()}">{contract_cell(batch, cells[0], item)}</td>'
+            return r.group(0).replace('<td><span class="s', cell + '<td><span class="s', 1)
+
+        return f'<table data-testid="tracker-batch-{batch}">' + re.sub(r"<tr><td>.*?</tr>", row, body) + "</table>"
+
+    return re.sub(r'<table data-testid="tracker-batch-([a-z0-9-]+)">(.*?)</table>', table, src, flags=re.S)
+
+
 def build_backend():
     OUT.mkdir(exist_ok=True)
     src = (MEM / "backend_briefs" / "BACKEND_BRIEF_TRACKER.html").read_text(encoding="utf-8")
@@ -94,6 +136,7 @@ def build_backend():
         i = src.index(start)
         end = src.index("</h2>", i) + len("</h2>")
         src = src[:end] + f'<a id="batch-{key.lower()}"></a>' + batch_links(key) + src[end:]
+    src = add_contract_column(src)
     nav = (
         '<p class="nav" data-testid="tracker-nav">Jump to: <a href="#batch-a">Batch A</a> · <a href="#batch-b">Batch B</a> · '
         '<a href="#batch-c">Batch C</a> · <a href="#batch-d">Batch D</a> · <a href="/design-tracker.html">Design tracker &rarr;</a></p>'
@@ -102,7 +145,7 @@ def build_backend():
     src = src.replace(
         "</style>",
         ".docs{background:#fff;border:1px solid #d6d2c4;padding:8px 14px;margin:6px 0 12px;font-size:13px}"
-        ".docs ul{margin:4px 0 0 18px;padding:0}.docs li{margin:2px 0}a{color:#b4471b}.nav{font-size:14px}</style>",
+        ".nc{color:#888;font-size:11px}.docs ul{margin:4px 0 0 18px;padding:0}.docs li{margin:2px 0}a{color:#b4471b}.nav{font-size:14px}</style>",
         1,
     )
     (PUB / "backend-tracker.html").write_text(src, encoding="utf-8")
