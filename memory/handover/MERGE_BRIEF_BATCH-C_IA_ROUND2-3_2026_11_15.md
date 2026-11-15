@@ -2,7 +2,16 @@
 
 Docs/evidence only. **Zero app source changes.** Copy the files into the repo at the same paths (they are relative to `/app/`).
 
-## ADDED
+## ADDED — Round 1 (Gate 2 IA, read-only probes)
+| Path | What |
+|---|---|
+| memory/impact/BUG-675_IMPACT_ANALYSIS.md | BUG-675 IA (remove "Total sale" text) |
+| memory/evidence/BATCH-C-IA/probes_2026_11_15/*.txt | Round 1 read-only probe outputs (12 files: CR-524 cancel fields, CR-528 order logs/operations, CR-503 Beta TAB rows) |
+| memory/PRD_DEPLOYMENT_RECORD_2026-11-15_EMERGENT_E1_FRESH_DEPLOY2.md | Fresh deploy record for this session |
+
+Round 1 files also in this zip (later edited in rounds 2–3): CR-503 / CR-528 / CR-524 IA, BATCH-C summary, backend brief.
+
+## ADDED — Rounds 2–3
 | Path | What |
 |---|---|
 | memory/impact/BATCH-C_GATE2_OWNER_ROUND3_2026_11_15.md | Owner round-3 answers (13), clash list, CR-505/CR-510 coverage notes (CR-510 claim corrected), next-probe data list |
@@ -21,7 +30,7 @@ Docs/evidence only. **Zero app source changes.** Copy the files into the repo at
 | memory/backend_briefs/BACKEND_BRIEF_BATCH-C_2026_11_15.md | Updated ASK 1 + ASK 2 (log every bill print incl. reprints, fix order_edit amounts, log order cancel); proxy struck out. Still DRAFT — send only after IA freeze |
 
 ## NOT changed
-BUG-675_IMPACT_ANALYSIS.md, registry.json, CR_REGISTRY.md, FILE_OWNERSHIP.md, all frontend/backend code.
+registry.json, CR_REGISTRY.md, FILE_OWNERSHIP.md, all frontend/backend code.
 
 ## Merge steps for agent
 1. Unzip at repo root (paths start with `memory/`). For EDITED files the zip version is the latest; overwrite.
