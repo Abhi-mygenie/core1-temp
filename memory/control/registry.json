@@ -36812,7 +36812,7 @@
       "risk": "MEDIUM",
       "area": "Reports / Analytics",
       "files": "OrderDetailSheet.jsx, reportService.js",
-      "notes": "[2026-11-14 owner decisions] OrderDetailSheet renders variations/add-ons; BUG-601 QA-passed. Investigation to validate on real aggregator order. || Excel Item #9. Show aggregator item variations and add-ons in the order details sheet. Related: BUG-601 (variations silently dropped). Depends on CR-509.",
+      "notes": "[2026-11-14 owner decisions] OrderDetailSheet renders variations/add-ons; BUG-601 QA-passed. Investigation to validate on real aggregator order. || Excel Item #9. Show aggregator item variations and add-ons in the order details sheet. Related: BUG-601 (variations silently dropped). Depends on CR-509. || [2026-11-15 Batch C IA round 3] NEEDS VERIFY (BUG-601 was about menu saving, not orders) — check on a real Swiggy/Zomato order.",
       "blocked_on": "",
       "assignee": "Abhishek",
       "related": [
