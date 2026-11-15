@@ -11,6 +11,13 @@ Point-of-Sale web application (React + FastAPI + MongoDB) for restaurant managem
 
 ---
 
+## Single trackers (2026-11-15)
+- Backend tracker (Batches A–D, brief + contract links per batch): `/backend-tracker.html`. Readable brief/contract pages: `/briefs/*.html`.
+- Design tracker (one file, tabs A/B/C/D): `/design-tracker.html`.
+- Source of truth stays in `memory/` (status rows: `backend_briefs/BACKEND_BRIEF_TRACKER.html`). After editing any brief, contract, mockup or tracker row, rebuild: `python3 memory/scripts/build_public_trackers.py`.
+- Old links `/backend-brief-tracker.html` and `/backend-brief-batch-a.html` redirect to the new pages.
+
+
 ## Current Status (2026-11-15)
 
 ### Batch A — Cancellation, Complimentary & Permissions (13 items)
