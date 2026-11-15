@@ -23,6 +23,8 @@ Before writing ANY final detail you are not 100% sure of (field name, type, valu
 | D | `backend_briefs/BACKEND_BRIEF_BATCH-D_2026_11_15.md` (BD-01..BD-09) | `impact/BATCH-D_IMPACT_ANALYSIS_SUMMARY_2026_11_15.md` + `impact/<ID>_IMPACT_ANALYSIS.md` (BUG-667, BUG-669, BUG-673, CR-525, CR-521, CR-523) | `change_requests/BATCH_D_OWNER_DECISIONS_2026_11_14.md` (R1–R6) | `evidence/BATCH-D-IA/probes_2026_11_15/` | Gate 2 CLOSED |
 
 ## 2. Contracts to write (one file per CR)
+**Order: Batch B first** (Gate 2.5 approved, ready) → **Batch D** (Gate 2 closed) → **Batch C last** (Gate 2 paused; ask the owner whether to wait for the freeze).
+
 File name: `memory/contracts/BATCH-<X>_<CR-ID>_API_CONTRACT_<YYYY_MM_DD>.md` (exactly this pattern — the tracker build script finds contracts by it).
 
 | Batch | Contract file (CR) | Tracker lines it must cover |
